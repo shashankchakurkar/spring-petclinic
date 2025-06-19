@@ -172,4 +172,16 @@ public class Owner extends Person {
 		pet.addVisit(visit);
 	}
 
+	public void addPetAttribute(Integer petId, PetAttributes petAttribute) {
+
+		Assert.notNull(petId, "Pet identifier must not be null!");
+		Assert.notNull(petAttribute, "PetAttribute must not be null!");
+
+		Pet pet = getPet(petId);
+
+		Assert.notNull(pet, "Invalid Pet identifier!");
+
+		pet.setPetAttribute(petAttribute);
+	}
+	
 }
